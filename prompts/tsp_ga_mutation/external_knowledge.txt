@@ -1,0 +1,3 @@
+- Use bounded swap, insertion, reversal, or small edge repair.
+- Crossover is fixed during this stage.
+- Return exactly one feasible permutation as result.

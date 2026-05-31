@@ -1,0 +1,16 @@
+def crossover_v2(parent1: list[int], parent2: list[int], rng, ctx: dict) -> list[int]:
+    n = len(parent1)
+    if n <= 2:
+        offsprings = parent1[:]
+        return offsprings
+    a, b = sorted(rng.choice(n, size=2, replace=False).astype(int).tolist())
+    offsprings = [-1] * n
+    offsprings[a:b] = parent1[a:b]
+    used = set(offsprings[a:b])
+    fill = [x for x in parent2 if x not in used]
+    j = 0
+    for i in range(n):
+        if offsprings[i] == -1:
+            offsprings[i] = fill[j]
+            j += 1
+    return offsprings

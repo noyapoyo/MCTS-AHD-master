@@ -1,0 +1,3 @@
+The mutate function returns result, one valid mutated permutation built from route.
+
+Tours are permutations of 0..n-1. rng is a numpy random generator. ctx contains n, distance_matrix/dist_matrix, and local_search_budget. The generated function must match CoCo-GA taskGA operator semantics. It must not compute full tour length. If distance_matrix is used, inspect only a bounded number of local candidate edges controlled by ctx["local_search_budget"]. Do not use unbounded while loops. Keep this as one top-level function; do not define nested helper functions.

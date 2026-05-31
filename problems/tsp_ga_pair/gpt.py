@@ -1,0 +1,20 @@
+def ga_operators_v2(parent1: list[int], parent2: list[int], route: list[int], rng, ctx: dict) -> tuple:
+    n = len(parent1)
+    if n <= 2:
+        result = (parent1[:], route[:])
+        return result
+    a, b = sorted(rng.choice(n, size=2, replace=False).astype(int).tolist())
+    crossover_child = [-1] * n
+    crossover_child[a:b] = parent1[a:b]
+    used = set(crossover_child[a:b])
+    fill = [x for x in parent2 if x not in used]
+    j = 0
+    for i in range(n):
+        if crossover_child[i] == -1:
+            crossover_child[i] = fill[j]
+            j += 1
+    mutated_route = route[:]
+    i, j = sorted(rng.choice(n, size=2, replace=False).astype(int).tolist())
+    mutated_route[i], mutated_route[j] = mutated_route[j], mutated_route[i]
+    result = (crossover_child, mutated_route)
+    return result
