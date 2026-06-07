@@ -3,4 +3,7 @@ problem_type: constructive
 obj_type: min
 problem_size: 0
 func_name: ga_operators
-description: Solving configured optimization instances with the same taskGA used by CoCo-GA. The generated heuristic is one function that returns both a crossover child and a mutated route.
+description: >-
+  Solving configured optimization instances with the same taskGA used by CoCo-GA.
+  The generated heuristic is one function that returns both a crossover child and a
+  mutated route.
